@@ -26,7 +26,14 @@ const Footer = () => {
 						</div>
 					</motion.div>
 				</Link>
-				<p className="text-slate-600 text-xl">All rights reserved.</p>
+				<p className="text-slate-600 text-xl text-center">
+					Made with ♡ By{" "}
+					<Link
+						href={"https://www.linkedin.com/in/mohamed-yessine-baananou/"}
+						className="text-white font-semibold">
+						Mohamed Yessine Baananou
+					</Link>
+				</p>
 				<Link
 					href={"/"}
 					className="text-2xl md:text-5xl text-white font-semibold">

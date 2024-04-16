@@ -25,16 +25,7 @@ const HeroSection = () => {
 						</span>
 						<br></br>
 						<TypeAnimation
-							sequence={[
-								"Participants",
-								1000,
-								"Competitors",
-								1000,
-								// "Mobile Developer",
-								// 1000,
-								// "UI/UX Designer",
-								// 1000,
-							]}
+							sequence={["Participants", 1000, "Competitors", 1000]}
 							wrapper="span"
 							speed={50}
 							repeat={Infinity}
@@ -46,6 +37,7 @@ const HeroSection = () => {
 						We are waiting for you to participate in the competition and show
 						your skills.
 					</p>
+
 					<div className="socials flex flex-row gap-2">
 						<Link href="linkedin.com">
 							<FaLinkedin size={50} />

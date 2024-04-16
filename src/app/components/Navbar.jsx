@@ -15,17 +15,17 @@ import {
 const navLinks = [
 	{
 		title: "About",
-		icon: <FaLinkedin size={50} />,
+		icon: <FaLinkedin size={40} />,
 		path: "#about",
 	},
 	{
 		title: "Projects",
-		icon: <FaInstagramSquare size={50} />,
+		icon: <FaInstagramSquare size={40} />,
 		path: "#projects",
 	},
 	{
 		title: "Contact",
-		icon: <FaFacebookSquare size={50} />,
+		icon: <FaFacebookSquare size={40} />,
 		path: "#contact",
 	},
 ];
@@ -34,48 +34,27 @@ const Navbar = () => {
 	const [navbarOpen, setNavbarOpen] = useState(false);
 
 	return (
-		<nav className="fixed mx-auto border border-[#33353F] top-0 left-0 right-0 z-10 bg-[#121212] bg-opacity-100">
+		<nav className="z-50 fixed mx-auto border border-[#33353F] top-0 left-0 right-0 bg-[#121212] bg-opacity-100">
 			<div className="flex container lg:py-4 flex-wrap items-center justify-between mx-auto px-4 py-2">
-				<div className="flex gap-2">
-					<Link
-						href={"/"}
-						className="text-2xl md:text-5xl text-white font-semibold">
-						<motion.div
-							initial={{ opacity: 0, scale: 0.5 }}
-							animate={{ opacity: 1, scale: 1 }}
-							transition={{ duration: 0.5 }}
-							className="col-span-4 place-self-center mt-4 lg:mt-0">
-							<div className="w-12 h-12 lg:w-24 lg:h-24 relative">
-								<Image
-									src="/images/hero-image.png"
-									alt="hero image"
-									className="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-									width={300}
-									height={300}
-								/>
-							</div>
-						</motion.div>
-					</Link>
-					<Link
-						href={"/"}
-						className="text-2xl md:text-5xl text-white font-semibold">
-						<motion.div
-							initial={{ opacity: 0, scale: 0.5 }}
-							animate={{ opacity: 1, scale: 1 }}
-							transition={{ duration: 0.5 }}
-							className="col-span-4 place-self-center mt-4 lg:mt-0">
-							<div className="w-12 h-12 lg:w-24 lg:h-24 relative">
-								<Image
-									src="/images/about-image.png"
-									alt="hero image"
-									className="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-									width={300}
-									height={300}
-								/>
-							</div>
-						</motion.div>
-					</Link>
-				</div>
+				<Link
+					href={"/"}
+					className="text-2xl md:text-5xl text-white font-semibold">
+					<motion.div
+						initial={{ opacity: 0, scale: 0.5 }}
+						animate={{ opacity: 1, scale: 1 }}
+						transition={{ duration: 0.5 }}
+						className="col-span-4 place-self-center mt-4 lg:mt-0">
+						<div className="w-12 h-12 lg:w-24 lg:h-24 relative">
+							<Image
+								src="/images/hero-image.png"
+								alt="hero image"
+								className="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+								width={300}
+								height={300}
+							/>
+						</div>
+					</motion.div>
+				</Link>
 				<div className="mobile-menu block md:hidden">
 					{!navbarOpen ? (
 						<button
