@@ -6,7 +6,7 @@ export const PackagesComponent = () => {
 				<div className="flex-1 text-xl mt-14 rounded-xl border border-[#F7E16F]/25 bg-[#19170d] p-10 w-full">
 					<div className="text-[#F7E16F]">First Place</div>
 					<div className="text-6xl my-5 font-light">500 DT</div>
-					<div> & Incubation avec Innovation City</div>
+					<div> & Incubation with Novation City</div>
 				</div>
 				<div className="flex-1 text-xl mt-14 rounded-xl border border-[#4E67E5]/25 bg-[#080C23] p-10 w-full">
 					<div className="text-[#4d66e5]">Second Place</div>
