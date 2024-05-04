@@ -4,10 +4,13 @@ import { NumberBox } from "./NumberBox";
 import ArticleComponent from "./ArticleComponent";
 
 export const TimerContainer = () => {
-	const eventDate = new Date("2024-04-05T10:00:00"); // April 19, 2024, at 16:00
+	const eventDate = new Date("2024-04-05T10:00:00");
+	const eventEnd = new Date("2024-04-05T17:30:00");
 
 	const calculateTimeLeft = () => {
-		const difference = eventDate - new Date();
+		const now = new Date();
+		const difference = eventDate - now;
+		const endDifference = eventEnd - now;
 		let timeLeft = {};
 
 		if (difference > 0) {
@@ -19,41 +22,48 @@ export const TimerContainer = () => {
 			};
 		}
 
-		return timeLeft;
+		return { timeLeft, eventEnded: endDifference <= 0 };
 	};
 
-	const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
-	const [timerExpired, setTimerExpired] = useState(false);
+	const [timeLeft, setTimeLeft] = useState(calculateTimeLeft().timeLeft);
+	const [eventEnded, setEventEnded] = useState(calculateTimeLeft().eventEnded);
 
 	useEffect(() => {
-		if (Object.keys(timeLeft).length === 0) {
-			setTimerExpired(true);
-		} else {
-			const timer = setTimeout(() => {
-				setTimeLeft(calculateTimeLeft());
+		if (!eventEnded) {
+			const timer = setInterval(() => {
+				const { timeLeft, eventEnded } = calculateTimeLeft();
+				setTimeLeft(timeLeft);
+				setEventEnded(eventEnded);
 			}, 1000);
 
-			return () => clearTimeout(timer);
+			return () => clearInterval(timer);
 		}
-	}, [timeLeft]);
-
-	const { days, hours, minutes, seconds } = timeLeft;
+	}, [eventEnded]);
 
 	const formatTime = (time) => {
 		return time < 10 ? `0${time}` : time;
 	};
 
-	if (timerExpired) {
-		// Timer has expired, display your content
+	const { days, hours, minutes, seconds } = timeLeft;
+
+	if (eventEnded) {
+		return (
+			<div className=" flex flex-col gap-6 my-24">
+				<h1 className="text-center text-6xl max-sm:text-5xl font-bold">
+					The Event has Ended
+				</h1>
+				<h2 className="text-center text-6xl max-sm:text-5xl font-bold">
+					Thank You !!
+				</h2>
+			</div>
+		);
+	} else if (Object.keys(timeLeft).length === 0) {
 		return (
 			<div>
-				<h2>Timer Expired</h2>
-				{/* Your content here */}
 				<ArticleComponent />
 			</div>
 		);
 	} else {
-		// Timer is still active, display the countdown
 		return (
 			<div className="mt-2 md:mt-20 rounded-xl">
 				<h1 className="text-center text-6xl max-sm:text-5xl font-bold">
