@@ -4,8 +4,8 @@ import { NumberBox } from "./NumberBox";
 import ArticleComponent from "./ArticleComponent";
 
 export const TimerContainer = () => {
-	const eventDate = new Date("2024-04-05T10:00:00");
-	const eventEnd = new Date("2024-04-05T17:30:00");
+	const eventDate = new Date("2024-05-05T10:00:00");
+	const eventEnd = new Date("2024-05-05T17:30:00");
 
 	const calculateTimeLeft = () => {
 		const now = new Date();
