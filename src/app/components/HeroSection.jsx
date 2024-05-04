@@ -9,6 +9,9 @@ import {
 	FaFacebookSquare,
 	FaInstagramSquare,
 } from "react-icons/fa";
+import { PackagesComponent } from "./PackagesComponent";
+import LogoCarousel from "./LogoCarousel";
+import { TimerContainer } from "./TimerContainer";
 
 const HeroSection = () => {
 	return (
@@ -37,18 +40,6 @@ const HeroSection = () => {
 						We are waiting for you to participate in the competition and show
 						your skills.
 					</p>
-
-					<div className="socials flex flex-row gap-2">
-						<Link href="linkedin.com">
-							<FaLinkedin size={50} />
-						</Link>
-						<Link href="instagram.com">
-							<FaInstagramSquare size={50} />
-						</Link>
-						<Link href="facebook.com">
-							<FaFacebookSquare size={50} />
-						</Link>
-					</div>
 				</motion.div>
 				<motion.div
 					initial={{ opacity: 0, scale: 0.5 }}
@@ -65,6 +56,11 @@ const HeroSection = () => {
 						/>
 					</div>
 				</motion.div>
+			</div>
+			<TimerContainer />
+			<PackagesComponent />
+			<div className="my-8">
+				<LogoCarousel />
 			</div>
 		</section>
 	);

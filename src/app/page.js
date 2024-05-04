@@ -9,8 +9,6 @@ export default function Home() {
 			<Navbar />
 			<div className="container mt-24 mx-auto px-12 py-4">
 				<HeroSection />
-				<p className="text-xl text-center">Our Hackathon starts in:</p>
-				<TimerContainer />
 			</div>
 
 			<Footer />

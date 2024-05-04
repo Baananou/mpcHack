@@ -14,19 +14,19 @@ import {
 
 const navLinks = [
 	{
-		title: "About",
+		title: "@microsoft-polytechnique-club",
 		icon: <FaLinkedin size={40} />,
-		path: "#about",
+		path: "https://www.linkedin.com/company/microsoft-polytechnique-club/",
 	},
 	{
-		title: "Projects",
+		title: "microsoft_polytechnique_club",
 		icon: <FaInstagramSquare size={40} />,
-		path: "#projects",
+		path: "https://www.instagram.com/microsoft_polytechnique_club/",
 	},
 	{
-		title: "Contact",
+		title: "@MicrosoftPolytechClub",
 		icon: <FaFacebookSquare size={40} />,
-		path: "#contact",
+		path: "https://www.facebook.com/MicrosoftPolytechClub",
 	},
 ];
 
